@@ -1,24 +1,43 @@
-
-const nota = parseInt(prompt('Ingrese una nota del 0 a 10'))
-
-if (nota >= 0){
-    let calificacion;
-    if (nota >= 0 && nota <= 2){
-        calificacion = 'Muy deficiente';
-    } else if (nota >= 3 && nota <= 4){
-        calificacion = 'Insuficiente'
-    } else if (nota >= 5 && nota <= 6){
-        calificacion = 'Suficiente'
-    } else if (nota === 7){
-        calificacion = 'Bien'
-    } else if (nota >= 8 && nota <= 9){
-        calificacion = 'Notable'
-    } else if (nota === 10){
-        calificacion = 'Sobresaliente'
-    } else if (nota > 10){
-        calificacion = 'Número erróneo'
+/* Escribir un programa que solicite una nota (número) de 0 a 10.
+Luego mostrar la calificación en un alert según los siguientes rangos de nota:
+0-2: Muy deficiente
+3-4: Insuficiente
+5-6: Suficiente
+7: Bien
+8-9: Notable
+10: Sobresaliente */
+let numero;
+do {
+  numero = parseInt(prompt("Ingrese una nota del 1 al 10"));
+  if (!isNaN(numero) && numero > 0 && numero <= 10) {
+    switch (numero) {
+      case 0:
+      case 1:
+      case 2:
+        alert("Muy deficiente");
+        break;
+      case 3:
+      case 4:
+        alert("3-4: Insuficiente");
+        break;
+      case 5:
+      case 6:
+        alert("5-6: Suficiente");
+        break;
+      case 7:
+        alert("Bien");
+        break;
+      case 8:
+      case 9:
+        alert("Notable");
+        break;
+      case 10:
+        alert("Sobresaliente");
+        break;
+      default:
+        alert("Número erróneo");
     }
-    alert(`Su calificación es: ${calificacion}`) 
-} else{
-    alert('Introduce un número válido')
-}
+  } else {
+    alert("Ingrese un número válido");
+  }
+} while (confirm("¿Desea continuar?"));

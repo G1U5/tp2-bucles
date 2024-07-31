@@ -1,15 +1,14 @@
-let resultado = "";
-
-while (true) {
-  const cadena = prompt("Ingrese una cadena de texto");
-  if (cadena === null) {
-    break;
-  }
-
-  if (resultado === "") {
-    resultado += cadena;
+/*
+Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”.
+ Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
+*/
+resultado = "";
+do {
+  let palabra = prompt("Ingrese una cadena de texto");
+  if (resultado == "") {
+    resultado = palabra;
   } else {
-    resultado += '-' + cadena;
+    resultado = resultado + "-" + palabra;
   }
-}
-document.write(`Cadenas ingresadas: ${resultado}`);
+} while (confirm("¿Desea continuar?"));
+document.write(resultado);
